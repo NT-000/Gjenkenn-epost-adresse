@@ -1,48 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email</title>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="updateView()">
     <div id="app"></div>
-    <script>
-      let letter1 = "@";
-      let letter2 = ".";
-      let letter3 = " ";
-
-      let textResult = '';
-
-      function updateView() {
-        let html = /*HTML*/ `
-        <div id="divResult"></div>
-        <input id="inputField" type="text" placeholder="Enter your email">
-        <button onclick="submit()">Login</button>
-    
-        `;
-        document.getElementById("app").innerHTML = html;
-      }
-
-      function submit() {
-        let inputString = document.getElementById("inputField").value;
-        let resultDiv = document.getElementById("divResult");
-        let indexOfLetter1 = inputString.indexOf(letter1);
-        let indexOfLetter2 = inputString.indexOf(letter2);
-
-        let containLetter1 = inputString.includes(letter1);
-        let containLetter2 = inputString.includes(letter2);
-        let doNotContainLetter3 = inputString.includes(letter3);
-
-          if (containLetter1 && containLetter2 && !doNotContainLetter3 && indexOfLetter1 < indexOfLetter2) {
-            resultDiv.innerHTML = "Login succesful!";
-          } else {
-            resultDiv.innerHTML =
-              "Input is not an email! Must include @, . , and not space between characters.";
-          }
-        }
-
-      updateView();
-    </script>
-  </body>
+    <script src="js.js"></script>
+</body>
 </html>
